@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE00B95C245D6DA800D48EE0 /* IgnoreTouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00B95B245D6DA800D48EE0 /* IgnoreTouchView.swift */; };
 		EECACF3C2458966D00A6F10F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF3B2458966D00A6F10F /* AppDelegate.swift */; };
 		EECACF3E2458966D00A6F10F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF3D2458966D00A6F10F /* SceneDelegate.swift */; };
 		EECACF402458966D00A6F10F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECACF3F2458966D00A6F10F /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE00B95B245D6DA800D48EE0 /* IgnoreTouchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnoreTouchView.swift; sourceTree = "<group>"; };
 		EECACF382458966D00A6F10F /* AvatorImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvatorImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EECACF3B2458966D00A6F10F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EECACF3D2458966D00A6F10F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				EECACF3D2458966D00A6F10F /* SceneDelegate.swift */,
 				EECACF3F2458966D00A6F10F /* ViewController.swift */,
 				EECACF412458966D00A6F10F /* Main.storyboard */,
+				EE00B95B245D6DA800D48EE0 /* IgnoreTouchView.swift */,
 				EECACF442458967300A6F10F /* Assets.xcassets */,
 				EECACF462458967300A6F10F /* LaunchScreen.storyboard */,
 				EECACF492458967300A6F10F /* Info.plist */,
@@ -140,6 +143,7 @@
 			files = (
 				EECACF402458966D00A6F10F /* ViewController.swift in Sources */,
 				EECACF3C2458966D00A6F10F /* AppDelegate.swift in Sources */,
+				EE00B95C245D6DA800D48EE0 /* IgnoreTouchView.swift in Sources */,
 				EECACF3E2458966D00A6F10F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

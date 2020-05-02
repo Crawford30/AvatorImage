@@ -4,7 +4,7 @@
 //
 //  Created by JOEL CRAWFORD on 4/28/20.
 //  Copyright © 2020 JOEL CRAWFORD. All rights reserved.
-//
+//https://stackoverflow.com/questions/39569987/passing-only-some-touch-events-from-one-view-to-another-view
 
 import UIKit
 
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         
-              scrollView.addSubview(imageView)
+               scrollView.addSubview(imageView)
         
                imageView.addSubview(upLabel)
                imageView.addSubview(downLabel)
@@ -50,10 +50,10 @@ class ViewController: UIViewController {
         alignView()
         
         
-        
-        
        
     }
+    
+    
     
     
     
@@ -70,6 +70,16 @@ class ViewController: UIViewController {
            downLabel.alpha = 0.4
            leftLabel.alpha = 0.4
            rightLabel.alpha = 0.4
+        
+        upLabel.isUserInteractionEnabled = false
+
+        downLabel.isUserInteractionEnabled = false
+        leftLabel.isUserInteractionEnabled = false
+        rightLabel.isUserInteractionEnabled = false
+        
+        scrollView.isUserInteractionEnabled = true
+
+        
         
        
         
@@ -92,6 +102,14 @@ class ViewController: UIViewController {
            //height: (UIScreen.main.bounds.width - 80.0)/2)
            
        }
+    
+    
+    
+    
+    
+    
+    
+    
 
 
 
@@ -102,3 +120,45 @@ class ViewController: UIViewController {
 
 
 
+
+
+
+
+
+//class PassthroughView: UIView {
+//
+//
+//    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+//
+//
+//        guard let scrollView = subviews.first else {
+//
+//            return false
+//
+//
+//        }
+//
+//        return scrollView.hitTest(convert(point, to: scrollView), with: event) != nil
+//    }
+    
+//    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+//
+//        let view = super.hitTest(point, with: event)
+//
+//
+//        return view == self ? nil : view
+//
+//    }
+    
+//}
+
+
+//class IgnoreTouchView : UIView {
+//    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+//        let hitView = super.hitTest(point, with: event)
+//        if hitView == self {
+//            return nil
+//        }
+//        return hitView
+//    }
+//}
