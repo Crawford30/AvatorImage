@@ -33,27 +33,43 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         
-               scrollView.addSubview(imageView)
+                scrollView.addSubview(imageView)
         
-               imageView.addSubview(upLabel)
-               imageView.addSubview(downLabel)
-               imageView.addSubview(leftLabel)
-               imageView.addSubview(rightLabel)
+                self.view.addSubview(upLabel)
+                self.view.addSubview(downLabel)
+                self.view.addSubview(leftLabel)
+                self.view.addSubview(rightLabel)
+        
+                 imageView.isUserInteractionEnabled = true
+        
+//        let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(self.pinchGesture))
+//
+//        imageView.addGestureRecognizer(pinchGesture)
         
         
-        //to remove USEAUTOCONSTRAINTS
-        for constraint in self.view.constraints {
+      //  imageView.transform = CGAffineTransform(scaleX: 0.4, y: 0.4)
         
-            constraint.isActive = false }
-        
+                //to remove USEAUTOCONSTRAINTS
+                for constraint in self.view.constraints {
+                
+                    constraint.isActive = false }
     
-        alignView()
+                    alignView()
         
         
        
     }
     
     
+//    //handle pinch
+//
+//   @objc func pinchGesture(sender: UIPinchGestureRecognizer) {
+//
+//    sender.view?.transform = (sender.view?.transform.scaledBy(x: sender.scale, y: sender.scale))!
+//        sender.scale = 1.0
+//
+//    }
+//
     
     
     
@@ -105,12 +121,6 @@ class ViewController: UIViewController {
     
     
     
-    
-    
-    
-    
-    
-
 
 
 }
@@ -125,40 +135,3 @@ class ViewController: UIViewController {
 
 
 
-//class PassthroughView: UIView {
-//
-//
-//    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-//
-//
-//        guard let scrollView = subviews.first else {
-//
-//            return false
-//
-//
-//        }
-//
-//        return scrollView.hitTest(convert(point, to: scrollView), with: event) != nil
-//    }
-    
-//    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-//
-//        let view = super.hitTest(point, with: event)
-//
-//
-//        return view == self ? nil : view
-//
-//    }
-    
-//}
-
-
-//class IgnoreTouchView : UIView {
-//    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-//        let hitView = super.hitTest(point, with: event)
-//        if hitView == self {
-//            return nil
-//        }
-//        return hitView
-//    }
-//}
