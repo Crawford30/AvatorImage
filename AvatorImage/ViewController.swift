@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIScrollViewDelegate {
+    
+    var gestureRecognizer: UITapGestureRecognizer!
     
     let avatorImageWidth: CGFloat = 80.0
     
@@ -32,6 +34,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        scrollView.minimumZoomScale = 1.0
+        scrollView.maximumZoomScale = 6.0
+       
+        
         
                 scrollView.addSubview(imageView)
         
@@ -42,12 +48,7 @@ class ViewController: UIViewController {
         
                  imageView.isUserInteractionEnabled = true
         
-//        let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(self.pinchGesture))
-//
-//        imageView.addGestureRecognizer(pinchGesture)
-        
-        
-      //  imageView.transform = CGAffineTransform(scaleX: 0.4, y: 0.4)
+
         
                 //to remove USEAUTOCONSTRAINTS
                 for constraint in self.view.constraints {
@@ -61,15 +62,13 @@ class ViewController: UIViewController {
     }
     
     
-//    //handle pinch
-//
-//   @objc func pinchGesture(sender: UIPinchGestureRecognizer) {
-//
-//    sender.view?.transform = (sender.view?.transform.scaledBy(x: sender.scale, y: sender.scale))!
-//        sender.scale = 1.0
-//
-//    }
-//
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+
+        return self.imageView
+    }
+    
+    
+
     
     
     
@@ -121,12 +120,33 @@ class ViewController: UIViewController {
     
     
     
+     
+    
+    
+        
+    }
+    
+    
 
 
-}
 
 
 
+//extension UIImageView {
+//  func enableZoom() {
+//    let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(startZooming(_:)))
+//    isUserInteractionEnabled = true
+//    addGestureRecognizer(pinchGesture)
+//  }
+//
+//  @objc
+//  private func startZooming(_ sender: UIPinchGestureRecognizer) {
+//    let scaleResult = sender.view?.transform.scaledBy(x: sender.scale, y: sender.scale)
+//    guard let scale = scaleResult, scale.a > 1, scale.d > 1 else { return }
+//    sender.view?.transform = scale
+//    sender.scale = 1
+//  }
+//}
 
 
 
